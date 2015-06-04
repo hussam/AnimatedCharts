@@ -9,12 +9,12 @@ open CoreGraphics
 open Foundation
 open UIKit
 
-type UILabelCountingMethod = EaseInOut = 0 | EaseIn = 1 | EaseOut = 2 | Linear = 3
+type CountingMethod = EaseInOut = 0 | EaseIn = 1 | EaseOut = 2 | Linear = 3
 
-type UILabelCounterFormatter = delegate of float -> string
-type UILabelCounterAttributedFormatter = delegate of float -> NSAttributedString
+type CountFormatter = delegate of float -> string
+type CountAttributedFormatter = delegate of float -> NSAttributedString
 
-type UICountingLabel(frame : CGRect) as this =
+type CountingLabel(frame : CGRect) as this =
     inherit UILabel(frame)
     let mutable startingValue = 0.0
     let mutable targetValue = 0.0
@@ -30,11 +30,11 @@ type UICountingLabel(frame : CGRect) as this =
 
     let displayedProgress (timedProgress : float) =
         match this.CountingMethod with
-        | UILabelCountingMethod.Linear ->
+        | CountingMethod.Linear ->
             timedProgress
-        | UILabelCountingMethod.EaseIn ->
+        | CountingMethod.EaseIn ->
             Math.Pow(timedProgress, easingRate)
-        | UILabelCountingMethod.EaseOut ->
+        | CountingMethod.EaseOut ->
             1.0 - Math.Pow(1.0 - timedProgress, easingRate)
         | _ ->
             let r = int easingRate
@@ -64,12 +64,12 @@ type UICountingLabel(frame : CGRect) as this =
         this.TextColor <- UIColor.Black
         timer.Elapsed.Add(updateValue)
 
-    new() = new UICountingLabel(CGRect.Empty)
+    new() = new CountingLabel(CGRect.Empty)
 
-    member val CountingMethod = UILabelCountingMethod.Linear with get, set
+    member val CountingMethod = CountingMethod.Linear with get, set
     member val IntegerSteps = false with get,set
-    member val Formatter = null : UILabelCounterFormatter with get, set
-    member val AttributedFormatter = null : UILabelCounterAttributedFormatter with get, set
+    member val Formatter = null : CountFormatter with get, set
+    member val AttributedFormatter = null : CountAttributedFormatter with get, set
 
     [<CLIEvent>]
     member this.Finished = finished.Publish

@@ -20,9 +20,9 @@ namespace Charts
 			base.ViewDidLoad ();
 			View.BackgroundColor = UIColor.White;
 
-			var lbl = new UICountingLabel (new CGRect (100, 200, 100, 100));
+			var lbl = new CountingLabel (new CGRect (100, 200, 100, 100));
 			lbl.Text = "Any Text";
-			lbl.CountingMethod = UILabelCountingMethod.EaseInOut;
+			lbl.CountingMethod = CountingMethod.EaseInOut;
 			lbl.Finished += (sender, e) => Console.WriteLine("Finished Counting");
 
 			var btn = new UIButton (new CGRect (100, 400, 200, 100));
