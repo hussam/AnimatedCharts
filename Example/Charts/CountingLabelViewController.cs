@@ -24,6 +24,9 @@ namespace Charts
 			lbl.Text = "Any Text";
 			lbl.CountingMethod = CountingMethod.EaseInOut;
 			lbl.Finished += (sender, e) => Console.WriteLine("Finished Counting");
+			lbl.Formatter = delegate(double value) {
+				return String.Format ("#: {0:D}", (int)value);
+			};
 
 			var btn = new UIButton (new CGRect (100, 400, 200, 100));
 			btn.SetTitle ("Start Counting", UIControlState.Normal);

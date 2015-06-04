@@ -58,7 +58,7 @@ type CountingLabel(frame : CGRect) as this =
                             let percent = displayedProgress (float progress / float duration)
                             startingValue + (percent * (targetValue - startingValue))
 
-        formatter(nextValue)
+        this.InvokeOnMainThread(fun() -> formatter(nextValue))
 
     do
         this.TextColor <- UIColor.Black
@@ -86,7 +86,7 @@ type CountingLabel(frame : CGRect) as this =
                      elif this.IntegerSteps then
                          fun value -> (this.Text <- (int value).ToString())
                      else
-                         fun value -> (this.InvokeOnMainThread(fun() -> this.Text <- String.Format("{0:f1}", value)))
+                         fun value -> (this.Text <- String.Format("{0:f1}", value))
 
         if durationInSeconds = 0.0 then
             formatter(endValue)
