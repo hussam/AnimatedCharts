@@ -1,4 +1,6 @@
-﻿module Extensions
+﻿// Adapted from https://github.com/kevinzhow/PNChart
+
+module Extensions
 
 open System
 open UIKit

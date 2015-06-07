@@ -1,4 +1,6 @@
-﻿namespace AnimatedCharts
+﻿// Adapted from https://github.com/kevinzhow/PNChart
+
+namespace AnimatedCharts
 
 open System
 open UIKit
