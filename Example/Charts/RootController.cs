@@ -16,7 +16,8 @@ namespace Charts
 			readonly RootController controller;
 
 			Dictionary<string, UIViewController> examples = new Dictionary<string, UIViewController> {
-				{"Counting Label", new CountingLabelViewController()}
+				{"Counting Label", new CountingLabelViewController()},
+				{"Circle Chart", new CircleChartViewController()},
 			};
 
 			public RootSource(RootController rc)

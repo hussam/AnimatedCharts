@@ -79,6 +79,7 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="RootController.cs" />
     <Compile Include="CountingLabelViewController.cs" />
+    <Compile Include="CircleChartViewController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
