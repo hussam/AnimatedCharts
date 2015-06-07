@@ -9,7 +9,7 @@ open Extensions
 
 type ChartFormat = Percent = 0 | Dollar = 1 | None = 2
 
-type CircleChart(frame : CGRect, clockwise, shadowColor : UIColor, displayCountingLabel, lineWidth) as this = 
+type CircleChart(frame : CGRect, clockwise, lineWidth, shadowColor : UIColor, displayCountingLabel) as this = 
     inherit UIView(frame)
 
     let mutable value = 0.0
@@ -63,9 +63,9 @@ type CircleChart(frame : CGRect, clockwise, shadowColor : UIColor, displayCounti
 
 
     // Other constructors
-    new(frame, clockwise, shadowColor, displayCountingLabel) = new CircleChart(frame, clockwise, shadowColor, displayCountingLabel, 8.0)
-    new(frame, clockwise, shadowColor) = new CircleChart(frame, clockwise, shadowColor, true)
-    new(frame, clockwise) = new CircleChart(frame, clockwise, UIColor.PNGrey)
+    new(frame, clockwise, lineWidth, shadowColor) = new CircleChart(frame, clockwise, lineWidth, shadowColor, true)
+    new(frame, clockwise, lineWidth) = new CircleChart(frame, clockwise, lineWidth, UIColor.PNGrey)
+    new(frame, clockwise) = new CircleChart(frame, clockwise, 8.0)
 
     // Properties
     member this.Value with get() = value

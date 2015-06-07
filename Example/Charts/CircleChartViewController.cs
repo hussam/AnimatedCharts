@@ -21,7 +21,7 @@ namespace Charts
 			base.ViewDidLoad ();
 			View.BackgroundColor = UIColor.White;
 
-			var chart = new CircleChart (new CGRect (0, 100, UIScreen.MainScreen.Bounds.Width, 100), true);
+			var chart = new CircleChart (new CGRect (0, 100, UIScreen.MainScreen.Bounds.Width, 100), true, 15);
 			chart.BackgroundColor = UIColor.Clear;
 
 			var txt = new UITextView (new CGRect (50, 200, 50, 50));
