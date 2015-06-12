@@ -19,6 +19,7 @@ namespace Charts
 		{
 			Window = new UIWindow (UIScreen.MainScreen.Bounds);
 			Window.RootViewController = new UINavigationController(new RootController ());
+
 			Window.MakeKeyAndVisible ();
 			return true;
 		}
