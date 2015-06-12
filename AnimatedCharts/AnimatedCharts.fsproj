@@ -48,6 +48,8 @@
     <Compile Include="Extensions.fs" />
     <Compile Include="CountingLabel.fs" />
     <Compile Include="CircleChart.fs" />
+    <Compile Include="Bar.fs" />
+    <Compile Include="BarChart.fs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.FSharp.targets" />
 </Project>
