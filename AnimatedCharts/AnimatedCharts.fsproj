@@ -50,6 +50,7 @@
     <Compile Include="CircleChart.fs" />
     <Compile Include="Bar.fs" />
     <Compile Include="BarChart.fs" />
+    <Compile Include="LineChart.fs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.FSharp.targets" />
 </Project>
