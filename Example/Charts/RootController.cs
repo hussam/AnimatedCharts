@@ -19,6 +19,7 @@ namespace Charts
 				{"Counting Label", new CountingLabelViewController()},
 				{"Circle Chart", new CircleChartViewController()},
 				{"Bar Chart", new BarChartViewController()},
+				{"Line Chart", new LineChartViewController()}
 			};
 
 			public RootSource(RootController rc)
